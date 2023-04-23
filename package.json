@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^2.0.3",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.9.0",
     "@types/node": "18.15.13",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "next-sanity": "^4.1.7",
-    "next-themes": "^0.2.1"
+    "next-themes": "^0.2.1",
+    "sanity": "^3.9.0"
   }
 }
