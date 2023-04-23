@@ -1,6 +1,7 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
+import { schemaTypes } from '@sanity-schemas';
 
 const config = defineConfig({
   projectId: 'kxwuzftt',
@@ -10,6 +11,7 @@ const config = defineConfig({
   useCdn: true,
   basePath: '/admin',
   plugins: [deskTool(), visionTool()],
+  schema: { types: schemaTypes },
 });
 
 export default config;
