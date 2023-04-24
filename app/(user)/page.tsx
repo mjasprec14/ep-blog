@@ -1,5 +1,6 @@
 import { getPosts } from '@sanity-utils';
 import { urlFor } from '@/src/sanity/sanity.utils';
+
 import Image from 'next/image';
 
 export default async function Home() {
