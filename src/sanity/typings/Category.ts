@@ -1,9 +1,6 @@
-interface Category {
-  _ref: string;
-  _type: 'reference';
-  _key: string;
-}
+import { Base } from './typings';
 
-export default interface Categories {
-  categories: Category[];
+export default interface Category extends Base {
+  description: string;
+  title: string;
 }

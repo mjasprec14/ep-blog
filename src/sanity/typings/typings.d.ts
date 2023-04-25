@@ -1,8 +1,9 @@
-export interface SanityBody {
+export interface Base {
   _rev: string;
   _id: string;
   _createdAt: string;
   _updatedAt: string;
+  _type: string;
 }
 
 export interface Slug {
@@ -12,25 +13,34 @@ export interface Slug {
 
 export interface Image {
   _type: 'image';
-  asset: {
-    _ref: string;
-    _type: 'reference';
-  };
+  asset: Reference;
 }
 
-interface Children {
-  _type: 'span';
+export interface Reference {
+  _ref: string;
+  _type: 'reference';
+}
+
+export interface Block {
   _key: string;
-  text: string;
-  marks: any[];
-}
-
-interface BioItem {
-  markDefs: any[];
-  children: Children[];
   _type: 'block';
-  style: string;
+  children: Span[];
+  markDefs: any[];
+  style: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
+}
+interface Span {
   _key: string;
+  _type: 'span';
+  marks: string[];
+  text: string;
 }
 
-export type Bio = BioItem[];
+interface MainImage {
+  _type: 'image';
+  asset: Reference;
+}
+
+interface Title {
+  _type: 'string';
+  current: string;
+}

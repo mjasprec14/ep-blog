@@ -1,30 +1,14 @@
 import Author from './Author';
-import Categories from './Category';
-import { SanityBody, Image, Slug } from './typings';
-import { PortableTextBlock } from 'sanity';
+import Category from './Category';
+import { Base, Block, Image, Slug } from './typings';
 
-interface Children {
-  text: string;
-  _key: string;
-  _type: 'span';
-  marks: any[];
-}
-
-interface Body {
-  _type: 'block';
-  style: string;
-  _key: string;
-  markDefs: any[];
-  children: Children[];
-}
-
-export default interface Post extends SanityBody {
-  _type: 'post';
-  title: string;
-  body: PortableTextBlock;
-  publishedAt: string;
+export default interface Post extends Base {
   author: Author;
-  categories: Categories;
+  body: Block[];
+  categories: Category[];
   mainImage: Image;
   slug: Slug;
+  title: string;
+  publishedAt: string;
+  isFeaturedPost: boolean;
 }
