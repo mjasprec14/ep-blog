@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { urlFor } from '@/src/sanity/sanity.utils';
 import BlogContent from './BlogContent';
 import { PortableText } from '@portabletext/react';
+import { TbExternalLink } from 'react-icons/tb';
 
 type Props = {
   posts: Post[];
@@ -11,13 +12,13 @@ type Props = {
 export default function BlogList({ posts }: Props) {
   return (
     <section id='blog-list'>
-      <div className='py-48 min-h-screen max-w-7xl mx-auto'>
+      <div className='min-h-screen max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-10 gap-10 gap-y-16 pb-24'>
         {posts?.map((post) => (
           <div
             key={post?._id}
             className='group cursor-pointer flex flex-col'
           >
-            <div className='relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out z-20'>
+            <div className='relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out'>
               <Image
                 className='object-cover object-left lg:object-center'
                 src={urlFor(post?.mainImage).url()}
@@ -31,15 +32,21 @@ export default function BlogList({ posts }: Props) {
                 categories={post?.categories}
               />
             </div>
-            <div className='mt-5 flex-1'>
-              <p>{post?.title}</p>
+            <div className='mt-3 flex-1 space-y-3 relative'>
+              <p className='underline text-lg font-bold'>{post?.title}</p>
+              <p className='line-clamp-2 text-gray-500 text-sm'>
+                {post?.body.map((item, idx) => (
+                  <PortableText
+                    key={idx}
+                    value={item}
+                  />
+                ))}
+              </p>
 
-              {post?.body.map((item, idx) => (
-                <PortableText
-                  key={idx}
-                  value={item}
-                />
-              ))}
+              <p className='absolute right-0 md:top-[14%] text-sm mt-3 font-semibold flex items-center group-hover:underline'>
+                Read Full Article
+                <TbExternalLink className='ml-2' />
+              </p>
             </div>
           </div>
         ))}
