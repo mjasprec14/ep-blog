@@ -24,7 +24,7 @@
       "@components": ["./src/components"],
       "@sanity-schemas": ["./src/sanity/schemas"],
       "@sanity-utils": ["./src/sanity/utils"],
-      "@sanity-typings": ["./src/sanity/typings/*"]
+      "@sanity-typings": ["./src/sanity/typings"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

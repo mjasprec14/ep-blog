@@ -4,4 +4,6 @@ interface Category {
   _key: string;
 }
 
-export type Categories = Category[];
+export default interface Categories {
+  categories: Category[];
+}

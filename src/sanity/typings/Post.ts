@@ -1,5 +1,5 @@
-import { Author } from './Author';
-import { Categories } from './Category';
+import Author from './Author';
+import Categories from './Category';
 import { SanityBody, Image, Slug } from './typings';
 import { PortableTextBlock } from 'sanity';
 
@@ -18,7 +18,7 @@ interface Body {
   children: Children[];
 }
 
-export interface Post extends SanityBody {
+export default interface Post extends SanityBody {
   _type: 'post';
   title: string;
   body: PortableTextBlock;
