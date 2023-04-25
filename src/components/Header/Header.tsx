@@ -1,27 +1,36 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Author } from '@sanity-typings';
+import { navitems } from './Header.utils';
 
-type Props = {
-  author: Author;
-};
-
-export default async function Header({ author }: Props) {
-  console.log(author);
+export default function Header() {
   return (
-    <header className='w-full flex flex-col justify-between items-center space-x-2 font-bold px-10 py-5'>
+    <header className='w-screen flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row md:justify-between md:items-center md:px-10 md:py-5 shadow offset-y-2 blur-2'>
       <div>
-        <Link href='/'>
+        <Link
+          href='/'
+          className='flex items-center space-x-2'
+        >
           <Image
-            src={''}
+            src='https://live.staticflickr.com/65535/52845552760_5e1b626a7d_m.jpg'
             alt='Emmanuel Piñol rounded photo'
             height={50}
             width={50}
-            className=''
+            className='rounded-full'
           />
+          <h1>Manny Piñol</h1>
         </Link>
       </div>
-      <div></div>
+      <div className='flex items-center space-x-8'>
+        {navitems?.map((nav, idx) => (
+          <Link
+            key={idx}
+            href={nav?.route}
+            className='hidden md:inline md:text-[12px] text-gray-500 tracking-[3px] uppercase font-semibold drop-shadow-md hover:animate-pulse transition'
+          >
+            {nav.name}
+          </Link>
+        ))}
+      </div>
     </header>
   );
 }
