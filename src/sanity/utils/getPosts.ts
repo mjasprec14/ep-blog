@@ -11,7 +11,11 @@ export default async function getPosts() {
     //   categories[]->
     // } | order(_createdAt desc)
 
-    return await sanityClient.fetch(groq`*[_type=="post"]`);
+    return await sanityClient.fetch(groq`*[_type=="post"]{
+      ...,
+      author->,
+      categories[]->,
+    } | order(_createdAt desc)`);
   } catch (error: any) {
     throw new Error('Failed to fetch Posts data:', error);
   }
