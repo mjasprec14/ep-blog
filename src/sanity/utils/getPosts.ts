@@ -5,6 +5,12 @@ export default async function getPosts() {
   try {
     const sanityClient = createClient(config);
 
+    // *[_type=='post'] {
+    //   ...,
+    //   author->
+    //   categories[]->
+    // } | order(_createdAt desc)
+
     return await sanityClient.fetch(groq`*[_type=="post"]`);
   } catch (error: any) {
     throw new Error('Failed to fetch Posts data:', error);
