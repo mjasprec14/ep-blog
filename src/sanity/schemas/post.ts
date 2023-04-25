@@ -47,6 +47,11 @@ const post = {
       title: 'Body',
       type: 'blockContent',
     },
+    {
+      name: 'isFeaturedPost',
+      title: 'Featured Post',
+      type: 'boolean',
+    },
   ],
 };
 
