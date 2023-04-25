@@ -1,24 +1,17 @@
 import { getPosts } from '@sanity-utils';
-import { urlFor } from '@/src/sanity/sanity.utils';
+import { Post } from '@sanity-typings';
 
-import Image from 'next/image';
+import { BlogList, Featured } from '@components';
 
 export default async function Home() {
-  const posts = await getPosts();
+  const posts: Post[] = await getPosts();
 
   return (
     <main className='min-h-screen'>
-      <h1>{posts[0]?.title}</h1>
-      <Image
-        src={urlFor(posts[0]?.mainImage).url()}
-        alt={``}
-        height={400}
-        width={400}
-      />
-
       {/* Landing page latest news big section */}
-
+      <Featured posts={posts} />
       {/* recent articles grid */}
+      <BlogList posts={posts} />
 
       {/* business agriculture / products */}
     </main>
