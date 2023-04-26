@@ -9,6 +9,12 @@ const post = {
       type: 'string',
     },
     {
+      name: 'description',
+      description: 'Enter a short snippet for the article..',
+      title: 'Description',
+      type: 'string',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
