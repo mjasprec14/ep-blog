@@ -38,7 +38,7 @@ export default async function PostPage({ params: { slug } }: Props) {
                 <h1 className='text-4xl font-extrabold'>{post?.title}</h1>
 
                 <p>
-                  {new Date(post._createdAt).toLocaleDateString('en-US', {
+                  {new Date(post._createdAt).toLocaleDateString('en-PH', {
                     day: 'numeric',
                     month: 'long',
                     year: 'numeric',

@@ -21,7 +21,7 @@ export default function BlogContent({
         <p className='font-bold'>{title}</p>
 
         <p>
-          {new Date(createdAt).toLocaleDateString('en-US', {
+          {new Date(createdAt).toLocaleDateString('en-PH', {
             day: 'numeric',
             month: 'long',
             year: 'numeric',
