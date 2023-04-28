@@ -4,7 +4,7 @@ import { navitems } from './Header.utils';
 
 export default function Header() {
   return (
-    <header className='flex items-center font-bold p-4 space-y-2 mb-16 md:space-x-2 md:flex-row md:justify-between md:items-center md:px-10 md:py-5 shadow offset-y-2 blur-2'>
+    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row md:justify-between md:items-center md:px-10 md:py-5 shadow offset-y-2 blur-2'>
       <div>
         <Link
           href='/'
