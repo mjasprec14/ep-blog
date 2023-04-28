@@ -21,7 +21,7 @@ export default async function PostPage({ params: { slug } }: Props) {
   const post: Post = await sanityClient.fetch(query, { slug });
 
   return (
-    <section className='px-0 md:px-10 pb-28'>
+    <section className='max-w-7xl mx-auto px-0 md:px-10 pb-28 space-y-6'>
       <div className='space-y-2 border border-[#F7AB0A] text-white'>
         <div className='relative min-h-56 flex flex-col md:flex-row justify-between'>
           <div className='absolute top-0 w-full h-full opacity-10 blur-sm p-10'>
@@ -46,7 +46,7 @@ export default async function PostPage({ params: { slug } }: Props) {
                 </p>
               </div>
 
-              <div className='flex items-center space-x-2'>
+              <div className='flex md:flex-col items-center space-x-2 md:items-end md:space-y-2'>
                 <Image
                   className='rounded-full'
                   src={urlFor(post?.author.image).url()}
@@ -55,9 +55,8 @@ export default async function PostPage({ params: { slug } }: Props) {
                   width={40}
                 />
 
-                <div className='w-64'>
+                <div className='w-64 md:text-end'>
                   <h3 className='text-lg font-bold'>{post?.author.name}</h3>
-                  <div></div>
                 </div>
               </div>
             </div>
@@ -78,7 +77,7 @@ export default async function PostPage({ params: { slug } }: Props) {
           </article>
         </div>
       </div>
-      <article>
+      <article className='px-4'>
         <PortableText
           content={post?.body}
           serializers={RichTextComponents}
