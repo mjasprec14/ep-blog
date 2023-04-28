@@ -2,7 +2,6 @@ import { Post } from '@sanity-typings';
 import Image from 'next/image';
 import { urlFor } from '@/src/sanity/sanity.utils';
 import BlogContent from './BlogContent';
-import { PortableText } from '@portabletext/react';
 import { TbExternalLink } from 'react-icons/tb';
 import { ClientSideRoute } from '@components';
 
@@ -33,25 +32,8 @@ export default function BlogList({ posts }: Props) {
                 body={post?.body}
                 title={post?.title}
                 categories={post?.categories}
+                route={`/post/${post.slug.current}`}
               />
-            </div>
-            <div className='mt-3 flex-1 space-y-3 relative'>
-              <p className='underline text-lg font-bold'>{post?.title}</p>
-              <div className='line-clamp-2 text-gray-500 text-sm'>
-                {post?.body.map((item, idx) => (
-                  <PortableText
-                    key={idx}
-                    value={item}
-                  />
-                ))}
-              </div>
-
-              <ClientSideRoute route={`/post/${post.slug.current}`}>
-                <p className='absolute right-0 md:top-[14%] text-sm mt-3 font-semibold flex items-center group-hover:underline'>
-                  Read Full Article
-                  <TbExternalLink className='ml-2' />
-                </p>
-              </ClientSideRoute>
             </div>
           </div>
         ))}
