@@ -4,7 +4,7 @@ import { navitems } from './Header.utils';
 
 export default function Header() {
   return (
-    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row md:justify-between md:items-center md:px-10 md:py-5 shadow offset-y-2 blur-2'>
+    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row md:justify-between md:items-center md:px-10 md:py-4 shadow offset-y-2 blur-2'>
       <div>
         <Link
           href='/'
@@ -19,7 +19,20 @@ export default function Header() {
           />
           <h1>Manny Piñol</h1>
         </Link>
+
+        <div className='text-left mt-2'>
+          <p className='text-[10px] text-gray-500'>
+            {`${new Date().toLocaleDateString('en-PH', {
+              weekday: 'long',
+            })}, ${new Date().toLocaleDateString('en-PH', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}`}
+          </p>
+        </div>
       </div>
+
       <div className='flex items-center space-x-8'>
         {navitems?.map((nav, idx) => (
           <Link
