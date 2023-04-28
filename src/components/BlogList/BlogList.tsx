@@ -11,10 +11,12 @@ type Props = {
 };
 
 export default function BlogList({ posts }: Props) {
+  const recentPost = posts.filter((post) => !post?.isFeaturedPost);
+
   return (
     <section id='blog-list'>
       <div className='min-h-screen max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-10 gap-10 gap-y-16 pb-24'>
-        {posts?.map((post) => (
+        {recentPost?.map((post) => (
           <div
             key={post?._id}
             className='group cursor-pointer flex flex-col'
