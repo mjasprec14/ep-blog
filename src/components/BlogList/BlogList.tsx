@@ -10,7 +10,8 @@ type Props = {
 };
 
 export default function BlogList({ posts }: Props) {
-  const recentPost = posts.filter((post) => !post?.isFeaturedPost);
+  const allRecentPost = posts.filter((post) => !post?.isFeaturedPost);
+  const recentPost = allRecentPost.slice(0, 3);
 
   return (
     <section id='blog-list'>
