@@ -44,29 +44,25 @@ export default function BlogContent({
             ))}
           </div>
 
-          <div className='flex flex-row gap-y-2 md:flex-row md:gap-x-2'>
-            {categories?.map((category) => (
-              <p
-                key={category?._id}
-                className='bg-blue-500 bg-opacity-40 text-white px-2 py-1 rounded-full text-xs md:text-xs font-semibold'
-              >
-                <span>{category?.title}</span>
+          <div className='flex flex-row justify-between items-center'>
+            <div className='flex flex-row gap-y-2 md:gap-x-2'>
+              {categories?.map((category) => (
+                <p
+                  key={category?._id}
+                  className='bg-blue-500 bg-opacity-40 text-white px-2 py-1 rounded-full text-xs md:text-xs font-semibold'
+                >
+                  <span>{category?.title}</span>
+                </p>
+              ))}
+            </div>
+
+            <ClientSideRoute route={route}>
+              <p className='text-[10px] uppercase text-neutral-100 font-semibold border border-neutral-100 rounded-full py-1.5 px-2'>
+                <span>Read More</span>
               </p>
-            ))}
+            </ClientSideRoute>
           </div>
         </div>
-      </div>
-
-      <div className='absolute bottom-3 right-3'>
-        <ClientSideRoute route={route}>
-          <p className='hidden text-xs uppercase text-white font-semibold items-center group-hover:flex '>
-            Read Article
-            <TbExternalLink
-              className='ml-2'
-              size={18}
-            />
-          </p>
-        </ClientSideRoute>
       </div>
     </>
   );
