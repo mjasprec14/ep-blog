@@ -2,7 +2,7 @@ import { groq } from 'next-sanity';
 import { Post } from '@sanity-typings';
 import { sanityClient, urlFor } from '@/src/sanity/sanity.utils';
 import Image from 'next/image';
-import PortableText from 'react-portable-text';
+import { PortableText } from '@portabletext/react';
 import { RichTextComponents } from '@components';
 
 type Props = {
@@ -79,8 +79,8 @@ export default async function PostPage({ params: { slug } }: Props) {
       </div>
       <article className='px-4'>
         <PortableText
-          content={post?.body}
-          serializers={RichTextComponents}
+          value={post?.body}
+          components={RichTextComponents}
         />
       </article>
     </section>
