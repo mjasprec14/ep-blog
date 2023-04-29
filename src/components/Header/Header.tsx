@@ -19,9 +19,22 @@ export default function Header() {
           />
           <h1>Manny Piñol</h1>
         </Link>
+      </div>
 
-        <div className='text-left mt-2'>
-          <p className='text-[10px] text-gray-500'>
+      <div>
+        <div className='flex items-center space-x-8'>
+          {navitems?.map((nav, idx) => (
+            <Link
+              key={idx}
+              href={nav?.route}
+              className='hidden md:inline md:text-[12px] text-gray-500 tracking-[3px] uppercase font-semibold drop-shadow-md hover:animate-pulse transition'
+            >
+              {nav.name}
+            </Link>
+          ))}
+        </div>
+        <div className='text-right'>
+          <p className='text-[10px] mt-2'>
             {`${new Date().toLocaleDateString('en-PH', {
               weekday: 'long',
             })}, ${new Date().toLocaleDateString('en-PH', {
@@ -31,18 +44,6 @@ export default function Header() {
             })}`}
           </p>
         </div>
-      </div>
-
-      <div className='flex items-center space-x-8'>
-        {navitems?.map((nav, idx) => (
-          <Link
-            key={idx}
-            href={nav?.route}
-            className='hidden md:inline md:text-[12px] text-gray-500 tracking-[3px] uppercase font-semibold drop-shadow-md hover:animate-pulse transition'
-          >
-            {nav.name}
-          </Link>
-        ))}
       </div>
     </header>
   );
