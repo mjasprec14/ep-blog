@@ -45,6 +45,7 @@ const blockContent = {
     }),
 
     defineArrayMember({
+      name: 'image',
       type: 'image',
       options: { hotspot: true },
     }),
