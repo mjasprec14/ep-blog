@@ -1,6 +1,7 @@
-import { Header, SocialMedia } from '@/src/components';
 import '../globals.css';
 import { Inter } from 'next/font/google';
+import Provider from './Provider';
+import { Header, SocialMedia } from '@/src/components';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,11 +16,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={`${inter.className} relative`}>
-        <Header />
-        <SocialMedia />
-        {children}
+    <html
+      lang='en'
+      className='dark'
+    >
+      <body
+        className={`${inter.className} relative dark:bg-zinc-900 dark:text-neutral-300`}
+      >
+        <Provider>
+          <Header />
+          <SocialMedia />
+          {children}
+        </Provider>
       </body>
     </html>
   );

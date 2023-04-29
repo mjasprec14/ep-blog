@@ -1,14 +1,20 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import { navitems } from './Header.utils';
+import { useTheme } from 'next-themes';
 
 export default function Header() {
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+
+  console.log(currentTheme);
   return (
-    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row md:justify-between md:items-center md:px-10 md:py-4 shadow offset-y-2 blur-2'>
+    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row md:justify-between md:items-center md:px-10 md:py-4 shadow offset-y-2 blur-2  dark:border-b dark:border-neutral-300'>
       <div>
         <Link
           href='/'
-          className='flex items-center space-x-2'
+          className='flex items-center space-x-3'
         >
           <Image
             src='https://live.staticflickr.com/65535/52845552760_5e1b626a7d_m.jpg'
@@ -17,7 +23,7 @@ export default function Header() {
             width={50}
             className='rounded-full'
           />
-          <h1>Manny Piñol</h1>
+          <h1 className='text-xl'>Manny Piñol</h1>
         </Link>
       </div>
 
@@ -27,7 +33,7 @@ export default function Header() {
             <Link
               key={idx}
               href={nav?.route}
-              className='hidden md:inline md:text-[12px] text-gray-500 tracking-[3px] uppercase font-semibold drop-shadow-md hover:animate-pulse transition'
+              className='hidden md:inline md:text-[12px] text-gray-500 dark:text-neutral-300 tracking-[3px] uppercase font-semibold drop-shadow-md hover:animate-pulse transition'
             >
               {nav.name}
             </Link>
