@@ -2,8 +2,6 @@ import { Post } from '@sanity-typings';
 import Image from 'next/image';
 import { urlFor } from '@/src/sanity/sanity.utils';
 import BlogContent from './BlogContent';
-import { TbExternalLink } from 'react-icons/tb';
-import { ClientSideRoute } from '@components';
 
 type Props = {
   posts: Post[];
