@@ -27,13 +27,13 @@ export default function Header() {
         </Link>
       </div>
 
-      <div className='flex flex-col items-end space-x-2'>
+      <div className='flex flex-col items-end space-x-2 text-gray-500 dark:text-neutral-300'>
         <div className='flex justify-end md:justify-center md:items-center space-x-8'>
           {navitems?.map((nav, idx) => (
             <Link
               key={idx}
               href={nav?.route}
-              className='hidden md:inline md:text-[12px] text-gray-500 dark:text-neutral-300 tracking-[3px] uppercase font-semibold drop-shadow-md hover:animate-pulse transition'
+              className='hidden md:inline md:text-[12px]  tracking-[3px] uppercase font-semibold drop-shadow-md hover:animate-pulse transition'
             >
               {nav.name}
             </Link>
