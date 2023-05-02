@@ -9,9 +9,8 @@ export default function Header() {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
-  console.log(currentTheme);
   return (
-    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row md:justify-between md:items-center md:px-10 md:py-4 shadow offset-y-2 blur-2  dark:border-b dark:border-neutral-300'>
+    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row justify-between md:items-center md:px-10 md:py-4 shadow offset-y-2 blur-2  dark:border-b dark:border-neutral-300'>
       <div>
         <Link
           href='/'
@@ -28,8 +27,8 @@ export default function Header() {
         </Link>
       </div>
 
-      <div>
-        <div className='flex items-center space-x-8'>
+      <div className='flex flex-col items-end space-x-2'>
+        <div className='flex justify-end md:justify-center md:items-center space-x-8'>
           {navitems?.map((nav, idx) => (
             <Link
               key={idx}
@@ -40,11 +39,17 @@ export default function Header() {
             </Link>
           ))}
           {currentTheme === 'dark' ? (
-            <button onClick={() => setTheme('light')}>
+            <button
+              onClick={() => setTheme('light')}
+              className='animate-bounce'
+            >
               <FiMoon size={20} />
             </button>
           ) : (
-            <button onClick={() => setTheme('dark')}>
+            <button
+              onClick={() => setTheme('dark')}
+              className='animate-bounce'
+            >
               <FiSun size={20} />
             </button>
           )}
