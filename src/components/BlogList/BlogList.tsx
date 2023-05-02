@@ -13,7 +13,7 @@ export default function BlogList({ posts }: Props) {
 
   return (
     <section id='blog-list'>
-      <div className='min-h-screen max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-10 gap-3 gap-y-16 pb-24'>
+      <div className='min-h-screen max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-10 gap-3 pb-24'>
         {recentPost?.map((post) => (
           <div
             key={post?._id}
