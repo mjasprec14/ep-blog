@@ -2,5 +2,14 @@ import author from './author';
 import blockContent from './blockContent';
 import category from './category';
 import post from './post';
+import pageInfo from './pageInfo';
+import social from './social';
 
-export const schemaTypes = [author, blockContent, category, post];
+export const schemaTypes = [
+  author,
+  blockContent,
+  category,
+  post,
+  pageInfo,
+  social,
+];
