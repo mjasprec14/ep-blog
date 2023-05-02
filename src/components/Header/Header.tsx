@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { navitems } from './Header.utils';
 import { useTheme } from 'next-themes';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 export default function Header() {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -38,6 +39,15 @@ export default function Header() {
               {nav.name}
             </Link>
           ))}
+          {currentTheme === 'dark' ? (
+            <button onClick={() => setTheme('light')}>
+              <FiMoon size={20} />
+            </button>
+          ) : (
+            <button onClick={() => setTheme('dark')}>
+              <FiSun size={20} />
+            </button>
+          )}
         </div>
         <div className='text-right'>
           <p className='text-[10px] mt-2'>
