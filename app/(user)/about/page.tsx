@@ -6,14 +6,29 @@ import { urlFor } from '@/src/sanity/sanity.utils';
 export default async function About() {
   const pageInfo: PageInfo = await getPageInfo();
 
-  console.log(pageInfo);
   return (
-    <section className='w-full min-h-screen border border-red-500 text-red-500'>
-      <h1>ABOUT PAGE</h1>
-      <article>
-        <div className='w-1/2'>
-          {pageInfo.name}
-          {pageInfo.backgroundInformation}
+    <section className='w-full min-h-screen'>
+      <article className='px-4 py-16'>
+        <div className='h-[35rem] grid md:grid-cols-3 gap-8 md:gap-10'>
+          <div className='flex items-center justify-center'>
+            <Image
+              src={urlFor(pageInfo?.heroImage).url()}
+              alt={`${pageInfo.name} about photo`}
+              height={400}
+              width={400}
+              className='object-contain object-center rounded-full border border-grey-500'
+            />
+          </div>
+          <div className='flex items-center pb-36 md:pb-0 px-4 md:col-span-2'>
+            <div className='space-y-6'>
+              <h1 className='text-lg md:text-2xl text-gray-500 tracking-[10px]'>
+                {pageInfo.name}
+              </h1>
+              <p className='w-full text-sm tracking-wide xl:w-[75%]'>
+                {pageInfo.backgroundInformation}
+              </p>
+            </div>
+          </div>
         </div>
       </article>
     </section>
