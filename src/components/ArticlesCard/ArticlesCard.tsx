@@ -9,7 +9,6 @@ type Props = {
 };
 
 export default function ArticlesCard({ post }: Props) {
-  //   console.log(post);
   return (
     <div className='relative h-[15rem] w-[21rem] md:w-[22rem] lg:w-[25rem] shadow-xl rounded-lg group overflow-hidden'>
       <Image
@@ -18,6 +17,10 @@ export default function ArticlesCard({ post }: Props) {
         fill
         className='object-cover object-center rounded-lg'
       />
+
+      <span className='absolute top-2 right-2 text-white p-1 rounded-full bg-slate-900/50 text-xs group-hover:translate-x-[80px] transition-transform duration-300 ease-out'>
+        {post?.categories[0].title}
+      </span>
 
       <div className='opacity-0 absolute flex text-white bg-black/50 h-full w-full group-hover:opacity-100 transition-opacity duration-300 ease-in'>
         <div className='m-auto '>
