@@ -51,7 +51,7 @@ export const RichTextComponents = {
         return null;
       }
 
-      const rel = !value.href._.startsWith('/')
+      const rel = !value.href.startsWith('/')
         ? 'noreferrer noopener'
         : undefined;
 
