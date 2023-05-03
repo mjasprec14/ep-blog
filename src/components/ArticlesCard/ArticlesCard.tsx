@@ -10,7 +10,7 @@ type Props = {
 export default function ArticlesCard({ post }: Props) {
   //   console.log(post);
   return (
-    <div className='relative h-[15rem] w-[22rem] md:w-[25rem] shadow-xl rounded-lg cursor-pointer group overflow-hidden'>
+    <div className='relative h-[15rem] w-[21rem] md:w-[22rem] lg:w-[25rem] shadow-xl rounded-lg cursor-pointer group overflow-hidden'>
       <Image
         src={urlFor(post?.mainImage).url()}
         alt={`${post?.title} - article photo`}
