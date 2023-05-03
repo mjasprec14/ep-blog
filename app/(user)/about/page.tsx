@@ -14,9 +14,9 @@ export default async function About() {
             <Image
               src={urlFor(pageInfo?.heroImage).url()}
               alt={`${pageInfo.name} about photo`}
-              height={400}
-              width={400}
-              className='object-contain object-center rounded-full border border-grey-500'
+              height={380}
+              width={380}
+              className='object-contain object-center rounded-full shadow-xl'
             />
           </div>
           <div className='flex items-center pb-36 md:pb-0 px-4 md:col-span-2'>
