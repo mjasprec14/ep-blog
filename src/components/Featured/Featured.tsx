@@ -15,7 +15,7 @@ export default function Featured({ posts }: Props) {
   return (
     <section id='featured-article'>
       <div className='max-w-7xl mx-auto mt-1 pb-4 px-2 xs:px-2 group cursor-pointer  md:px-10'>
-        <h1 className='text-gray-500 text-xs text-center uppercase tracking-[12px] xs:text-left xs:tracking-[20px pt-8 pb-4'>
+        <h1 className='text-gray-500 text-xs text-center uppercase tracking-[12px] xs:text-left xs:tracking-[20px pt-8 pb-4 drop-shadow-lg'>
           Featured article
         </h1>
         <div className='relative w-full h-[60vh] drop-shadow-xl text-white overflow-hidden'>

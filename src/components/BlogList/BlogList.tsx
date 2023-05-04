@@ -14,7 +14,7 @@ export default function BlogList({ posts }: Props) {
   return (
     <section id='blog-list'>
       <div className='max-w-7xl mx-auto px-2 xs:px-10'>
-        <h2 className='text-gray-500 text-xs text-center uppercase tracking-[12px] xs:text-left  xs:tracking-[20px] pb-4'>
+        <h2 className='text-gray-500 text-xs text-center uppercase tracking-[12px] xs:text-left  xs:tracking-[20px] pb-4 drop-shadow-lg'>
           Recent articles
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 pb-24'>

@@ -58,7 +58,7 @@ export default function BlogContent({
       <div className='opacity-0 absolute w-full h-full bg-black/70 group-hover:opacity-100 grid rounded-lg overflow-hidden '>
         <div className='m-auto'>
           <ClientSideRoute route={route}>
-            <button className='text-white border rounded-full py-2 px-4 flex flex-row items-center space-x-3 opacity-0 translate-y-56 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-in'>
+            <button className='text-white border rounded-full py-2 px-4 flex flex-row items-center space-x-3 group-hover:animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in'>
               <span>Read article</span>
               <GoLinkExternal />
             </button>
