@@ -33,7 +33,7 @@ export default function Header() {
             <Link
               key={idx}
               href={nav?.route}
-              className='hidden md:inline md:text-[12px]  tracking-[3px] uppercase font-semibold drop-shadow-md '
+              className='hidden md:inline md:text-[12px] tracking-[3px] uppercase font-semibold drop-shadow-sm '
             >
               {nav.name}
             </Link>
