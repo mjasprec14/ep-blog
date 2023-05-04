@@ -4,4 +4,5 @@ export { default as BlogList } from './BlogList/BlogList';
 export { default as Featured } from './Featured/Featured';
 export { default as ClientSideRoute } from './ClientSideRoute/ClientSideRoute';
 export { default as ArticlesCard } from './ArticlesCard/ArticlesCard';
+export { default as Footer } from './Footer/Footer';
 export { RichTextComponents } from './RichTextComponents/RichTextComponents';
