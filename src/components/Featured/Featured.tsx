@@ -14,8 +14,8 @@ export default function Featured({ posts }: Props) {
 
   return (
     <section id='featured-article'>
-      <div className='max-w-7xl mx-auto pb-4 group cursor-pointer text-white md:px-10'>
-        <div className='relative w-full h-[60vh] drop-shadow-xl group-hover:-translate-y-2 transition ease-in duration-150'>
+      <div className='max-w-7xl mx-auto mt-1 pb-4 px-2 xs:px-0 group cursor-pointer text-white md:px-10'>
+        <div className='relative w-full h-[60vh] drop-shadow-xl overflow-hidden'>
           <Image
             src={urlFor(latestPost?.mainImage).url()}
             alt={`${latestPost.title} article photo `}

@@ -13,15 +13,15 @@ export default function BlogList({ posts }: Props) {
 
   return (
     <section id='blog-list'>
-      <div className='max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 px-10 gap-3 pb-24'>
+      <div className='max-w-7xl mx-auto px-2 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xs:px-10 gap-3 pb-24'>
         {recentPost?.map((post) => (
           <div
             key={post?._id}
-            className='group cursor-pointer flex flex-col'
+            className='group cursor-pointer flex flex-col rounded-lg overflow-hidden'
           >
-            <div className='relative w-full h-80 drop-shadow-xl group-hover:-translate-y-2 transition duration-200 ease-out'>
+            <div className='relative w-full h-80 drop-shadow-xl'>
               <Image
-                className='object-cover object-left lg:object-center rounded-lg'
+                className='object-cover object-center rounded-lg'
                 src={urlFor(post?.mainImage).url()}
                 alt={`Article image - ${post?.title}`}
                 fill
