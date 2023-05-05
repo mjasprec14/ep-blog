@@ -16,7 +16,6 @@ export default async function Home() {
       <BlogList posts={posts} />
 
       {/* business agriculture / products */}
-      <Footer socials={socials} />
     </main>
   );
 }
