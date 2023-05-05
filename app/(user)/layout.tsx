@@ -1,6 +1,6 @@
 import '../globals.css';
 import { Inter } from 'next/font/google';
-import Provider from './Provider';
+import Providers from './Providers';
 import { Header, SocialMedia } from '@/src/components';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -20,11 +20,11 @@ export default function RootLayout({
       <body
         className={`${inter.className} relative dark:bg-zinc-900 dark:text-neutral-300`}
       >
-        <Provider>
+        <Providers>
           <Header />
           <SocialMedia />
           {children}
-        </Provider>
+        </Providers>
       </body>
     </html>
   );
