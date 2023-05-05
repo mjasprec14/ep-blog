@@ -5,7 +5,6 @@ import { EventsCard } from '@components';
 export default async function Events() {
   const events: Event[] = await getEvents();
 
-  console.log(events);
   return (
     <section
       id='events'

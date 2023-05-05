@@ -23,7 +23,7 @@ export default function Featured({ posts }: Props) {
             src={urlFor(latestPost?.mainImage).url()}
             alt={`${latestPost.title} article photo `}
             fill
-            className='object-cover object-bottom rounded-lg'
+            className='object-cover object-top rounded-lg'
           />
           <BlogContent
             createdAt={latestPost?._createdAt}

@@ -20,12 +20,12 @@ export default function EventsCard({ event }: Props) {
 
       <div className='grid grid-cols-3 items-center'>
         <div className='flex flex-col items-center p-3 text-gray-500 border-r border-gray-300'>
-          <p className='text-lg'>
+          <p className='text-xs'>
             {new Date(event.eventDate).toLocaleDateString('en-PH', {
               month: 'long',
             })}
           </p>
-          <p className='text-2xl'>
+          <p className='text-2xl font-semibold'>
             {new Date(event.eventDate).toLocaleDateString('en-PH', {
               day: 'numeric',
             })}
