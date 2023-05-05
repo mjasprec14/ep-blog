@@ -4,6 +4,7 @@ import category from './category';
 import post from './post';
 import pageInfo from './pageInfo';
 import social from './social';
+import event from './event';
 
 export const schemaTypes = [
   author,
@@ -12,4 +13,5 @@ export const schemaTypes = [
   post,
   pageInfo,
   social,
+  event,
 ];
