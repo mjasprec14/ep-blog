@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${inter.className} relative dark:bg-zinc-900 dark:text-neutral-300`}
+        className={`${inter.className} relative dark:bg-zinc-900 dark:text-neutral-300 scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-100`}
       >
         <Providers>
           <Header />
