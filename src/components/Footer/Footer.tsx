@@ -39,7 +39,7 @@ export default function Footer() {
 
         <div></div>
       </div>
-      <div className='w-full bg-gray-900 text-center px-4 py-2 border-t-2 border-t-orange-600'>
+      <div className='w-full bg-gray-900 text-center px-4 py-2 border-t-2 border-t-gray-600'>
         <p className='text-xs text-gray-500 uppercase font-semibold tracking-[5px] dark:text-neutral-200'>
           {new Date().getFullYear()} &copy; All Rights Reserved.
         </p>

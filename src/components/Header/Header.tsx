@@ -10,7 +10,7 @@ export default function Header() {
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row justify-between md:items-center md:px-10 md:py-4 shadow offset-y-2 blur-2  dark:border-b dark:border-neutral-300'>
+    <header className='flex items-center font-bold p-4 space-y-2 md:space-x-2 md:flex-row justify-between md:items-center md:px-10 md:py-4 shadow offset-y-2 blur-2  dark:border-b dark:border-gray-500'>
       <div>
         <Link
           href='/'
