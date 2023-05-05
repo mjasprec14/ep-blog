@@ -12,7 +12,7 @@ export default async function Articles() {
       <h1 className='text-xl text-left uppercase font-semibold text-gray-500 tracking-[20px]'>
         Articles
       </h1>
-      <div className='max-w-7xl h-screen'>
+      <div className='max-w-7xl min-h-screen'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
           {posts?.map((post) => (
             <ArticlesCard
