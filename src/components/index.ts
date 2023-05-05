@@ -5,4 +5,6 @@ export { default as Featured } from './Featured/Featured';
 export { default as ClientSideRoute } from './ClientSideRoute/ClientSideRoute';
 export { default as ArticlesCard } from './ArticlesCard/ArticlesCard';
 export { default as Footer } from './Footer/Footer';
+export { default as EventsCard } from './EventsCard/EventsCard';
+
 export { RichTextComponents } from './RichTextComponents/RichTextComponents';
