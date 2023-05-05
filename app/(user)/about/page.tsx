@@ -7,9 +7,9 @@ export default async function About() {
   const pageInfo: PageInfo = await getPageInfo();
 
   return (
-    <section className='w-full min-h-screen'>
-      <article className='px-4 py-16'>
-        <div className='h-[35rem] grid md:grid-cols-3 gap-8 md:gap-10'>
+    <section className='min-h-screen w-full flex flex-col items-center justify-center'>
+      <article className='max-w-7xl mx-auto py-16 md:py-0 md:px-10'>
+        <div className='min-h-[35rem] grid md:grid-cols-3 gap-8 md:gap-10'>
           <div className='flex items-center justify-center'>
             <Image
               src={urlFor(pageInfo?.heroImage).url()}
@@ -24,7 +24,7 @@ export default async function About() {
               <h1 className='text-lg md:text-2xl text-gray-500 tracking-[10px]'>
                 {pageInfo.name}
               </h1>
-              <p className='w-full text-sm tracking-wide xl:w-[75%]'>
+              <p className='w-full text-sm tracking-wide'>
                 {pageInfo.backgroundInformation}
               </p>
             </div>
