@@ -20,8 +20,8 @@ export default function Articles() {
 
   return (
     <section className='min-h-screen w-full flex flex-col items-center justify-center py-16 space-y-8'>
-      <h1 className='text-xl text-left uppercase font-semibold text-gray-500 tracking-[20px]'>
-        Articles
+      <h1 className='text-gray-500 text-xs text-center uppercase tracking-[12px] xs:text-left  xs:tracking-[20px] pb-4 drop-shadow-lg'>
+        Recent articles
       </h1>
       <div className='max-w-7xl min-h-screen space-y-8'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
