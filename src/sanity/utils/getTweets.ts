@@ -5,7 +5,11 @@ export default async function getTweets() {
   try {
     const sanityClient = createClient(config);
 
-    return await sanityClient.fetch(groq`*[_type=='tweet']`);
+    return await sanityClient.fetch(groq`*[_type=='tweet'] {
+  ...,
+  author ->
+} | order(publishedAt desc)
+`);
   } catch (error: any) {
     throw new Error('Failed to fetch Tweets data: ', error);
   }
