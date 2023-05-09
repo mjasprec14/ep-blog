@@ -6,6 +6,6 @@ export { default as ClientSideRoute } from './ClientSideRoute/ClientSideRoute';
 export { default as ArticlesCard } from './ArticlesCard/ArticlesCard';
 export { default as Footer } from './Footer/Footer';
 export { default as EventsCard } from './EventsCard/EventsCard';
-export { default as Tweet } from './Tweet/Tweet';
+export { default as Tweets } from './Tweets/Tweets';
 
 export { RichTextComponents } from './RichTextComponents/RichTextComponents';

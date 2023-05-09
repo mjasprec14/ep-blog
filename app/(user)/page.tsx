@@ -1,10 +1,11 @@
-import { getPosts, getPageInfo, getSocials } from '@sanity-utils';
-import { Post, PageInfo, Social } from '@sanity-typings';
+import { getPosts, getPageInfo, getSocials, getTweets } from '@sanity-utils';
+import { Post, PageInfo, Social, Tweet } from '@sanity-typings';
 
-import { BlogList, Featured, Footer } from '@components';
+import { BlogList, Featured, Tweets } from '@components';
 
 export default async function Home() {
   const posts: Post[] = await getPosts();
+  const tweets: Tweet[] = await getTweets();
   const pageInfo: PageInfo = await getPageInfo();
   const socials: Social[] = await getSocials();
 
@@ -16,6 +17,8 @@ export default async function Home() {
       <BlogList posts={posts} />
 
       {/* business agriculture / products */}
+
+      <Tweets tweets={tweets} />
     </main>
   );
 }
