@@ -7,5 +7,6 @@ export { default as ArticlesCard } from './ArticlesCard/ArticlesCard';
 export { default as Footer } from './Footer/Footer';
 export { default as EventsCard } from './EventsCard/EventsCard';
 export { default as Tweets } from './Tweets/Tweets';
+export { default as Events } from './Events/Events';
 
 export { RichTextComponents } from './RichTextComponents/RichTextComponents';
