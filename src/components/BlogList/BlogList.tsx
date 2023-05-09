@@ -12,7 +12,10 @@ export default function BlogList({ posts }: Props) {
   const recentPost = allRecentPost.slice(0, 3);
 
   return (
-    <section id='blog-list'>
+    <section
+      id='blog-list'
+      className='pb-16'
+    >
       <div className='max-w-7xl mx-auto px-2 xs:px-10'>
         <h2 className='text-gray-500 text-xs text-center uppercase tracking-[12px] xs:text-left  xs:tracking-[20px] pb-4 drop-shadow-lg'>
           Recent articles
