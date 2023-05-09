@@ -12,14 +12,16 @@ export default function Tweets({ tweets }: Props) {
       id='tweets'
       className='py-16'
     >
-      <h2 className='text-gray-500 text-xs text-center uppercase tracking-[12px] xs:text-left  xs:tracking-[20px] pb-4 drop-shadow-lg'>
-        Message
-      </h2>
-      <div className='max-w-7xl mx-auto py-8 flex flex-row overflow-x-scroll space-x-5 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent'>
+      <div className='flex'>
+        <h2 className='m-auto text-gray-500 text-xs uppercase tracking-[12px] xs:tracking-[20px] pb-4 drop-shadow-lg'>
+          Posts
+        </h2>
+      </div>
+      <div className='max-w-7xl mx-auto py-8 px-4 md:px-0 flex flex-row overflow-x-scroll space-x-5 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent'>
         {tweets?.map((tweet) => (
           <div
             key={tweet?._id}
-            className='flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:min-w-[360px] w-full h-fit space-y-4'
+            className='flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter min-w-[360px] w-full h-fit space-y-4'
           >
             <div className='flex flex-row space-x-4'>
               <Image
