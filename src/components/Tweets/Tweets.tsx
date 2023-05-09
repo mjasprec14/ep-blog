@@ -17,7 +17,7 @@ export default function Tweets({ tweets }: Props) {
           Posts
         </h2>
       </div>
-      <div className='max-w-7xl mx-auto py-8 px-4 md:px-0 flex flex-row overflow-x-scroll space-x-5 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent'>
+      <div className='max-w-7xl mx-auto py-8 px-4 lg:px-0 flex flex-row overflow-x-scroll space-x-5 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent'>
         {tweets?.map((tweet) => (
           <div
             key={tweet?._id}
