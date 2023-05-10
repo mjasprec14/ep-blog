@@ -8,4 +8,5 @@ export default interface Event extends Base {
   admission: string;
   slug: Slug;
   mainImage: Image;
+  upcomingEvent: boolean;
 }
