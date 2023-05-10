@@ -38,6 +38,31 @@ const post = {
       },
     },
     {
+      name: 'additionalImage',
+      title: 'Additional Image',
+      type: 'array',
+      of: [
+        {
+          name: 'images',
+          type: 'image',
+          title: 'Images',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative text',
+            },
+          ],
+        },
+      ],
+      options: {
+        layout: 'grid',
+      },
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
