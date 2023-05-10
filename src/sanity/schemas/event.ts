@@ -50,6 +50,11 @@ const event = {
         hotspot: true,
       },
     },
+    {
+      name: 'upcomingEvent',
+      title: 'Upcoming Event',
+      type: 'boolean',
+    },
   ],
 };
 
