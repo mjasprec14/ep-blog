@@ -12,4 +12,5 @@ export default interface Post extends Base {
   title: string;
   publishedAt: string;
   isFeaturedPost: boolean;
+  additionalImage?: Image[];
 }
