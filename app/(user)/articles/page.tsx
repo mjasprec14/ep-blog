@@ -56,7 +56,10 @@ export default function Articles() {
           <h1 className='text-gray-500 text-xs text-center md:text-left uppercase tracking-[12px] xs:text-left xs:tracking-[20px] drop-shadow-lg'>
             Recent articles
           </h1>
-          <SearchFilter handleSearchChange={handleSearchChange} />
+          <SearchFilter
+            searchText={searchText}
+            handleSearchChange={handleSearchChange}
+          />
         </div>
 
         <div className='min-h-screen space-y-8 '>
@@ -68,6 +71,7 @@ export default function Articles() {
                     <ArticlesCard
                       key={result?._id}
                       post={result}
+                      handleCategoryClick={handleCategoryClick}
                     />
                   ))
               : articles
@@ -76,6 +80,7 @@ export default function Articles() {
                     <ArticlesCard
                       key={result?._id}
                       post={result}
+                      handleCategoryClick={handleCategoryClick}
                     />
                   ))}
           </div>
