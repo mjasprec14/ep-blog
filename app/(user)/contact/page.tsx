@@ -1,9 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, SyntheticEvent } from 'react';
 import { TfiEmail } from 'react-icons/tfi';
 import { SlLocationPin, SlPhone } from 'react-icons/sl';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
+  const contactForm = useRef<HTMLFormElement>(null);
+  const [submitting, setSubmitting] = useState(false);
   const [formValues, setFormValues] = useState({
     email: '',
     name: '',
@@ -13,7 +16,26 @@ export default function Contact() {
     message: '',
   });
 
-  console.log(formValues);
+  const sendEmail = async (e: SyntheticEvent): Promise<void> => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      if (contactForm.current) {
+        const resp = await emailjs.sendForm(
+          'service_u18z0p6',
+          'template_ohtiarg',
+          contactForm.current,
+          'EDm3SjIzsvFCNnX22'
+        );
+
+        console.log(resp);
+      }
+    } catch (error: any) {
+      throw new Error('Failed to send Email: ', error);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <section id='contact'>
@@ -52,13 +74,19 @@ export default function Contact() {
             <h2 className='text-gray-500 text-xs text-center uppercase tracking-[12px] pt-8 pb-4 drop-shadow-lg font-semibold'>
               Send us a message
             </h2>
-            <form className='w-full flex flex-col gap-7 rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5 '>
+
+            <form
+              ref={contactForm}
+              onSubmit={sendEmail}
+              className='w-full flex flex-col gap-7 rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5 '
+            >
               <label htmlFor='email'>
                 <span className='font-semibold text-base text-gray-700 dark:text-white'>
                   Email
                 </span>
                 <input
                   id='email'
+                  name='user_email'
                   value={formValues.email}
                   onChange={(e) =>
                     setFormValues({ ...formValues, email: e.target.value })
@@ -76,6 +104,7 @@ export default function Contact() {
                 </span>
                 <input
                   id='name'
+                  name='user_name'
                   value={formValues.name}
                   onChange={(e) =>
                     setFormValues({ ...formValues, name: e.target.value })
@@ -93,12 +122,12 @@ export default function Contact() {
                 </span>
                 <input
                   id='company'
+                  name='user_company'
                   value={formValues.company}
                   onChange={(e) =>
                     setFormValues({ ...formValues, company: e.target.value })
                   }
                   placeholder='Your company'
-                  required
                   type='text'
                   className='w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0'
                 />
@@ -110,12 +139,12 @@ export default function Contact() {
                 </span>
                 <input
                   id='phone'
+                  name='user_phone'
                   value={formValues.phone}
                   onChange={(e) =>
                     setFormValues({ ...formValues, phone: e.target.value })
                   }
                   placeholder='Your phone'
-                  required
                   type='text'
                   className='w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0'
                 />
@@ -127,12 +156,12 @@ export default function Contact() {
                 </span>
                 <input
                   id='region'
+                  name='user_region'
                   value={formValues.region}
                   onChange={(e) =>
                     setFormValues({ ...formValues, region: e.target.value })
                   }
                   placeholder='Your region'
-                  required
                   type='text'
                   className='w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0'
                 />
@@ -144,6 +173,7 @@ export default function Contact() {
                 </span>
                 <input
                   id='message'
+                  name='message'
                   value={formValues.message}
                   onChange={(e) =>
                     setFormValues({ ...formValues, message: e.target.value })
@@ -154,6 +184,15 @@ export default function Contact() {
                   className='w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0'
                 />
               </label>
+
+              <div>
+                <button
+                  type='submit'
+                  disabled={submitting}
+                >
+                  Send
+                </button>
+              </div>
             </form>
           </div>
         </div>
