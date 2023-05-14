@@ -218,7 +218,7 @@ export default function Contact() {
                 <button
                   type='submit'
                   disabled={submitting}
-                  className='font-semibold flex-auto border border-gray-500 rounded-lg px-4 py-3'
+                  className='font-semibold flex-auto bg-white border border-gray-200 rounded-lg px-4 py-3 text-gray-500 blur-5 hover:-translate-y-1 transition-transform duration-150'
                 >
                   Send
                 </button>
