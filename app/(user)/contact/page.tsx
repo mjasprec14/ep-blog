@@ -79,19 +79,19 @@ export default function Contact() {
               Our Contact Info
             </h2>
             <div className='space-y-6 '>
-              <div className='flex flex-row items-center space-x-6 flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter min-w-[360px] w-full h-fit text-gray-500 dark:text-white'>
+              <div className='flex flex-row items-center space-x-6 flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter min-w-[260px] w-full h-fit text-gray-500 dark:text-white'>
                 <SlPhone size={25} />
                 <span className='text-sm font-semibold tracking-widest'>
                   +639151321954
                 </span>
               </div>
-              <div className='flex flex-row items-center space-x-6 flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter min-w-[360px] w-full h-fit text-gray-500 dark:text-white'>
+              <div className='flex flex-row items-center space-x-6 flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter min-w-[260px] w-full h-fit text-gray-500 dark:text-white'>
                 <TfiEmail size={25} />
                 <span className='text-sm font-semibold tracking-widest'>
                   me@gmail.com
                 </span>
               </div>
-              <div className='flex flex-row items-center space-x-6 flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter min-w-[360px] w-full h-fit text-gray-500 dark:text-white'>
+              <div className='flex flex-row items-center space-x-6 flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter min-w-[260px] w-full h-fit text-gray-500 dark:text-white'>
                 <SlLocationPin size={25} />
                 <span className='text-sm font-semibold tracking-widest'>
                   Philippines
@@ -100,7 +100,7 @@ export default function Contact() {
             </div>
           </div>
           <div className=' px-4'>
-            <h2 className='text-gray-500 text-xs text-center uppercase tracking-[12px] pt-8 pb-4 drop-shadow-lg font-semibold'>
+            <h2 className='text-gray-500 text-xs text-center uppercase tracking-[10px] xs:tracking-[12px] pt-8 pb-4 drop-shadow-lg font-semibold'>
               Send us a message
             </h2>
 
@@ -214,10 +214,11 @@ export default function Contact() {
                 />
               </label>
 
-              <div>
+              <div className='flex'>
                 <button
                   type='submit'
                   disabled={submitting}
+                  className='font-semibold flex-auto border border-gray-500 rounded-lg px-4 py-3'
                 >
                   Send
                 </button>
