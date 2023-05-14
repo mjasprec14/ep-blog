@@ -22,10 +22,10 @@ export default function Contact() {
     try {
       if (contactForm.current) {
         const resp = await emailjs.sendForm(
-          'service_u18z0p6',
-          'template_ohtiarg',
+          process.env.EMAILJS_SERVICE_ID!,
+          process.env.EMAILJS_TEMPLATE_ID!,
           contactForm.current,
-          'EDm3SjIzsvFCNnX22'
+          process.env.EMAILJS_PUBLIC_KEY
         );
 
         console.log(resp);
