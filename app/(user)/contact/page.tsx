@@ -54,11 +54,6 @@ export default function Contact() {
     }
   };
 
-  console.log(process.env.EMAILJS_SERVICE_ID!);
-  console.log(process.env.EMAILJS_TEMPLATE_ID!);
-  console.log(contactForm.current);
-  console.log(process.env.EMAILJS_PUBLIC_KEY);
-
   return (
     <section id='contact'>
       <div className='max-w-7xl mx-auto mt-1 pb-4 px-2 xs:px-2 md:px-10'>
