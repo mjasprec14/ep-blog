@@ -9,5 +9,6 @@ export { default as EventsCard } from './EventsCard/EventsCard';
 export { default as Tweets } from './Tweets/Tweets';
 export { default as Events } from './Events/Events';
 export { default as SearchFilter } from './SearchFilter/SearchFilter';
+export { default as Modal } from './Modal/Modal';
 
 export { RichTextComponents } from './RichTextComponents/RichTextComponents';
