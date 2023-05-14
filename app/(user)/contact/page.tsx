@@ -3,18 +3,33 @@ import { useState, useRef, SyntheticEvent } from 'react';
 import { TfiEmail } from 'react-icons/tfi';
 import { SlLocationPin, SlPhone } from 'react-icons/sl';
 import emailjs from '@emailjs/browser';
+import { Modal } from '@components';
+import { BsFillCheckCircleFill } from 'react-icons/bs';
+
+type formValueTypes = {
+  email: string;
+  name: string;
+  company: string;
+  phone: string;
+  region: string;
+  message: string;
+};
+
+const formDefaultValues: formValueTypes = {
+  email: '',
+  name: '',
+  company: '',
+  phone: '',
+  region: '',
+  message: '',
+};
 
 export default function Contact() {
   const contactForm = useRef<HTMLFormElement>(null);
-  const [submitting, setSubmitting] = useState(false);
-  const [formValues, setFormValues] = useState({
-    email: '',
-    name: '',
-    company: '',
-    phone: '',
-    region: '',
-    message: '',
-  });
+  const [submitting, setSubmitting] = useState<boolean>(false);
+  const [formValues, setFormValues] =
+    useState<formValueTypes>(formDefaultValues);
+  const [toggleModal, setToggleModal] = useState<boolean>(false);
 
   const sendEmail = async (e: SyntheticEvent): Promise<void> => {
     e.preventDefault();
@@ -30,10 +45,12 @@ export default function Contact() {
 
         console.log(resp);
       }
+      setToggleModal(true);
     } catch (error: any) {
       throw new Error('Failed to send Email: ', error);
     } finally {
       setSubmitting(false);
+      setFormValues(formDefaultValues);
     }
   };
 
@@ -44,7 +61,19 @@ export default function Contact() {
           Get in touch
         </h1>
 
-        <div className=' min-h-screen w-full grid grid-cols-1 md:grid-cols-2 '>
+        <Modal
+          customClass='h-[8rem] w-[20rem] flex flex-row rounded-lg items-center justify-center space-x-4'
+          toggleModal={toggleModal}
+          setToggleModal={setToggleModal}
+        >
+          <h3 className='text-xl font-semibold text-gray-800'>Message sent!</h3>
+          <BsFillCheckCircleFill
+            size={30}
+            className='text-green-400'
+          />
+        </Modal>
+
+        <div className='min-h-screen w-full grid grid-cols-1 md:grid-cols-2 '>
           <div className='px-4'>
             <h2 className='text-gray-500 text-xs text-center uppercase tracking-[12px] pt-8 pb-4 drop-shadow-lg font-semibold'>
               Our Contact Info
